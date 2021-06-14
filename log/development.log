@@ -1,10 +1,10 @@
-Started GET "/" for 127.0.0.1 at 2021-06-11 16:47:49 +0200
+Started GET "/" for 127.0.0.1 at 2021-06-14 11:08:38 +0200
 Processing by HomepageController#index as HTML
   Rendering layout layouts/application.html.erb
   Rendering homepage/index.html.erb within layouts/application
-  Rendered homepage/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 277)
+  Rendered homepage/index.html.erb within layouts/application (Duration: 106.4ms | Allocations: 277)
 [Webpacker] Everything's up-to-date. Nothing to do
-  Rendered layout layouts/application.html.erb (Duration: 53.9ms | Allocations: 6066)
-Completed 200 OK in 75ms (Views: 60.3ms | ActiveRecord: 0.0ms | Allocations: 9768)
+  Rendered layout layouts/application.html.erb (Duration: 1248.0ms | Allocations: 6171)
+Completed 200 OK in 1562ms (Views: 1377.7ms | ActiveRecord: 0.0ms | Allocations: 9700)
 
 
