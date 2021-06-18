@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :seekers
   resources :job_seekers
   resources :users
   root 'homepage#index'
