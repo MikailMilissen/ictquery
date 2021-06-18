@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :job_seekers
   resources :users
   root 'homepage#index'
   get 'homepage/about'
