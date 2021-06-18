@@ -5,7 +5,7 @@
 -- Dumped from database version 13.3 (Ubuntu 13.3-1.pgdg20.04+1)
 -- Dumped by pg_dump version 13.3
 
--- Started on 2021-06-18 09:25:23
+-- Started on 2021-06-18 10:06:12
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -449,8 +449,6 @@ ALTER TABLE public.schema_migrations OWNER TO martin;
 -- Data for Name: Adress; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public."Adress" (id, street, city, "postalCode", country, "houseNumber", "googleMapUrl") FROM stdin;
-\.
 
 
 --
@@ -459,8 +457,6 @@ COPY public."Adress" (id, street, city, "postalCode", country, "houseNumber", "g
 -- Data for Name: ContractType; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public."ContractType" (id, name) FROM stdin;
-\.
 
 
 --
@@ -469,8 +465,6 @@ COPY public."ContractType" (id, name) FROM stdin;
 -- Data for Name: Entreprise; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public."Entreprise" (id, name, about, "contactMail", "contactPhone") FROM stdin;
-\.
 
 
 --
@@ -479,8 +473,6 @@ COPY public."Entreprise" (id, name, about, "contactMail", "contactPhone") FROM s
 -- Data for Name: EntrepriseAdress; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public."EntrepriseAdress" (id, "idEntreprise", "idAdress") FROM stdin;
-\.
 
 
 --
@@ -489,8 +481,6 @@ COPY public."EntrepriseAdress" (id, "idEntreprise", "idAdress") FROM stdin;
 -- Data for Name: Experience; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public."Experience" (id, name) FROM stdin;
-\.
 
 
 --
@@ -499,8 +489,6 @@ COPY public."Experience" (id, name) FROM stdin;
 -- Data for Name: FavouriteEntreprise; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public."FavouriteEntreprise" (id, "dateAjout", "idEntreprise", "idUser") FROM stdin;
-\.
 
 
 --
@@ -509,8 +497,6 @@ COPY public."FavouriteEntreprise" (id, "dateAjout", "idEntreprise", "idUser") FR
 -- Data for Name: FavouriteJob; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public."FavouriteJob" (id, "dateAjout", "idJob", "idUser") FROM stdin;
-\.
 
 
 --
@@ -519,8 +505,6 @@ COPY public."FavouriteJob" (id, "dateAjout", "idJob", "idUser") FROM stdin;
 -- Data for Name: Job; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public."Job" (id, name, "dateCreation", expectations, description, "idEntreprise", "idAdress", "idContract", "idExperience") FROM stdin;
-\.
 
 
 --
@@ -529,8 +513,6 @@ COPY public."Job" (id, name, "dateCreation", expectations, description, "idEntre
 -- Data for Name: JobApplied; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public."JobApplied" (id, "dateAjout", "idJob", "idUser") FROM stdin;
-\.
 
 
 --
@@ -539,8 +521,6 @@ COPY public."JobApplied" (id, "dateAjout", "idJob", "idUser") FROM stdin;
 -- Data for Name: JobSector; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public."JobSector" (id, "idSector", "idJob") FROM stdin;
-\.
 
 
 --
@@ -549,8 +529,6 @@ COPY public."JobSector" (id, "idSector", "idJob") FROM stdin;
 -- Data for Name: Sector; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public."Sector" (id, name) FROM stdin;
-\.
 
 
 --
@@ -559,8 +537,6 @@ COPY public."Sector" (id, name) FROM stdin;
 -- Data for Name: SocialContact; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public."SocialContact" (id, name, "profilLink", "idEntreprise") FROM stdin;
-\.
 
 
 --
@@ -569,8 +545,6 @@ COPY public."SocialContact" (id, name, "profilLink", "idEntreprise") FROM stdin;
 -- Data for Name: User; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public."User" (username, firstname, lastname, password, mail, "idAdress", id) FROM stdin;
-\.
 
 
 --
@@ -579,9 +553,7 @@ COPY public."User" (username, firstname, lastname, password, mail, "idAdress", i
 -- Data for Name: ar_internal_metadata; Type: TABLE DATA; Schema: public; Owner: martin
 --
 
-COPY public.ar_internal_metadata (key, value, created_at, updated_at) FROM stdin;
-environment	development	2021-06-16 10:46:37.916834	2021-06-16 10:46:37.916834
-\.
+INSERT INTO public.ar_internal_metadata (key, value, created_at, updated_at) VALUES ('environment', 'development', '2021-06-16 10:46:37.916834', '2021-06-16 10:46:37.916834');
 
 
 --
@@ -590,8 +562,6 @@ environment	development	2021-06-16 10:46:37.916834	2021-06-16 10:46:37.916834
 -- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: martin
 --
 
-COPY public.schema_migrations (version) FROM stdin;
-\.
 
 
 --
@@ -990,7 +960,7 @@ ALTER TABLE ONLY public."EntrepriseAdress"
     ADD CONSTRAINT "idEntreprise" FOREIGN KEY ("idEntreprise") REFERENCES public."Entreprise"(id) NOT VALID;
 
 
--- Completed on 2021-06-18 09:25:24
+-- Completed on 2021-06-18 10:06:13
 
 --
 -- PostgreSQL database dump complete

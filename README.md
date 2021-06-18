@@ -84,7 +84,7 @@ git remote add upstream git@github.com:MikailMilissen/ictquery.git
 ===
 
 To install the DB: 
-Open /config/ictquery_devlopment.dumb
+Open /config/ictquery_devlopment.sql
 Copy the script
 Run it into query
 
